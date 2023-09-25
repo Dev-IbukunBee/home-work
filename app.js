@@ -6,7 +6,7 @@ const fruity = {
   "name": "Apple",
   "id": 6,
   "family": "Rosaceae",
-  "order": "Rosales",
+  "order": "Rosales", 
   "nutritions": {
       "carbohydrates": 11.4,
       "protein": 0.3,
@@ -14,10 +14,11 @@ const fruity = {
       "calories": 52,
       "sugar": 10.3
   }}
-*/
+  */
+
 app.put("/api/fruit", (req, res) => {
   const fruity = req.body
-  console.log(fruity)
+  console.log(req.body)
   res.send(JSON.stringify(fruity))
   
 }) 
@@ -35,6 +36,12 @@ app.get("/api/fruit/2", (req, res) => {
   res.send(JSON.stringify(fruity))
   
 }) 
+app.get("/api/fruit/banana", (req, res) => {
+  const fruity = req.params.id
+  console.log(fruity)
+  res.send(JSON.stringify(fruity))
+  
+})
 
 app.delete("/api/fruit/3", (req, res) => {
   const fruity = req.params.id
